@@ -31,16 +31,16 @@ namespace BooksStoreBL
         {
             return ListOfBooks.OrderBy(x => x.Id);
         }
-        public IEnumerable<BookDetails> GetAllBooksPriceOfComiks(/*List<BookDetails> l*/)
+        public IEnumerable<int> GetAllBooksPriceOfComiks(/*List<BookDetails> l*/)
         {
 
             return /*(IEnumerable<BookDetails>)*/ListOfBooks.Where(c => c.IsComics == true).Select(p => p.Price);
         }
    
-        public IEnumerable<BookDetails> GetAllBooksNameOf9()
+        public IEnumerable<string> GetAllBooksNameOf9()
         {
 
-            return ListOfBooks./*Select(p=>p.Name).*/Where(c => c.MaxAge >= 9&& c.MinAge <= 9);
+            return ListOfBooks.Where(c => c.MaxAge >= 9&& c.MinAge <= 9).Select(p => p.Name);
         }
      
     }
